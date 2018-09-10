@@ -14,7 +14,13 @@ namespace MVCWebStore.Controllers
     {
         private MVCWebStoreContext db = new MVCWebStoreContext();
 
+        public ActionResult DisplayByArtist(int ArtistID)
+        {
+            return View();
+        }
+
         // GET: Albums
+        [Route("Albums/All")]
         public ActionResult Index()
         {
             return View(db.Albums.ToList());
@@ -40,7 +46,7 @@ namespace MVCWebStore.Controllers
         {
             return View();
         }
-
+        
         // POST: Albums/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -59,6 +65,7 @@ namespace MVCWebStore.Controllers
         }
 
         // GET: Albums/Edit/5
+        [Route("Album/{id:int}")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
