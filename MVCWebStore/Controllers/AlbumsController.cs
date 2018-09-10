@@ -14,9 +14,9 @@ namespace MVCWebStore.Controllers
     {
         private MVCWebStoreContext db = new MVCWebStoreContext();
 
-        public ActionResult DisplayByArtist(int ArtistID)
+        public ActionResult DisplayByArtist()
         {
-            return View();
+            return View("Error");
         }
 
         // GET: Albums
